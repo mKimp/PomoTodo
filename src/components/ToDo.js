@@ -22,7 +22,7 @@ function ToDo({todoItem, settoDoList, toDoList}) {
         <div className="todo-list">
             <li className={`todo-item ${todoItem.completed ? "completed" : ""}`}>{todoItem.text}</li>  
             <button onClick={doneHandler}>Done</button>
-            <button onClick={removeHandler}>Remove</button> 
+            <button onClick={removeHandler}>Remove</button>
         </div>
     )
 }

@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: grid;
+  justify-items: center;
+  margin:20px;
+  border: 2px solid blue;
 }
 
 .todo-list{
@@ -8,4 +11,26 @@
 
 .completed{
   text-decoration: line-through; 
+}
+
+form input, button, select {
+  border-radius: 3px;
+  padding:0 20px 0 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.todoContainer{
+  border: 1px solid orange;
+  margin:20px;
+  
+}
+.todo-list{
+  display: flex;
+  justify-content: space-around;
 }

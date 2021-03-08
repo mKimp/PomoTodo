@@ -16,6 +16,16 @@ function App() {
   //filter to do list
   const [filterList, setFilterList] = useState([]);
 
+  //use one time only to retrieve the saved data form local storage;
+  useEffect(() =>{
+    getLocal();
+  }, [])
+
+  useEffect(() => {
+    filterListHandler();
+    saveToLocal();
+  }, [toDoList, selectoption])
+
   //switch todo list based on value on select option
   const filterListHandler =  () => {
     switch (selectoption){
@@ -31,17 +41,32 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    filterListHandler();
-  }, [toDoList, selectoption])
+  // save to the local storage
+
+  const saveToLocal = () => {
+    localStorage.setItem("toDoList", JSON.stringify(toDoList));
+  }
+
+  const getLocal = () => {
+    if(localStorage.getItem("toDoList") !== null){
+      let items = localStorage.getItem("toDoList", JSON.stringify(toDoList));
+      settoDoList(JSON.parse(items))
+    }
+  }
 
   return (
     <div className="App">
-        <h1>Today's todo list</h1>
-        <Form userInput={userInput} setUserInput={setUserInput} 
+        <div className="todoHeader">
+          <h1>Today's todo list</h1>
+        </div>
+        <div className="todoForm">
+          <Form userInput={userInput} setUserInput={setUserInput} 
               toDoList={toDoList} settoDoList={settoDoList} 
               selectoption={selectoption} setOption={setOption}/>
-        <TodoList toDoList={filterList} settoDoList={settoDoList}/>
+        </div>
+        <div className="todoList">
+          <TodoList toDoList={filterList} settoDoList={settoDoList}/>
+        </div>
     </div>
   );
 }

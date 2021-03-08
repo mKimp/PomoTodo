@@ -25,16 +25,20 @@ const Form = ({userInput, setUserInput, toDoList, settoDoList,selectoption, setO
         setOption(e.target.value);
     }
     return (
-        <div>
+        <div className="formContainer">
             <form>
-                <input value={userInput} onChange={inputHandler}  placeholder="add your todo here" type="text"></input>
+                <div className="inputDiv"> 
+                    <input value={userInput} onChange={inputHandler}  placeholder="add your todo here" type="text"></input>                
+                </div>
+                <div className="selectDiv">
                 <button onClick={submitHandler} type="submit" >Add</button>
-
                 <select onChange={selectOptionHandler}>
                     <option value="all">All</option>
                     <option value="incompleted">Incompleted</option>
                     <option value="completed">Completed</option>
                 </select>
+                </div>
+
             </form>
         </div>
     )
