@@ -24,7 +24,7 @@ function ToDo({todoItem, settoDoList, toDoList}) {
             <li className={`todo-item ${todoItem.completed ? "completed" : ""}`}>{todoItem.text}</li>  
 
             </div>
-            <div>
+            <div className="btnAddRemove">
             <button onClick={doneHandler}><i class="far fa-check-square"></i></button>
 
             <button onClick={removeHandler}><i class="fa fa-trash"></i></button>
