@@ -1,9 +1,12 @@
+body{
+  background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
+}
 .App {
-  display: grid;
-  justify-items: center;
-  width: 100%;
   margin-top: 30px;
+}
 
+h1{
+  text-align: center;
 }
 
 .todo-list{
@@ -14,17 +17,17 @@
   text-decoration: line-through; 
 }
 
-
 .formContainer{
-  display:flex;
-  flex-wrap: yes;
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 input, button, select{
   border:none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding:10px 14px;
+
 }
 
 button{
@@ -34,24 +37,29 @@ button{
 }
 .todoContainer{
   margin-top: 35px;
-  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 .todo-list{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  
+  margin-top:10px;
 }
 
 li{
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding:10px 14px;
+  background-color: white;
 }
 
-@media  only screen and (max-width:414px){
-
-  input, button, select, li{
-    border:none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    padding:8px 10px;
+@media only screen and (max-width: 376px)  {
+  .todoContainer{
+    display: block;
+    text-align: center;
   }
+  .formContainer{
+    display: block;
+    text-align: center;
+
+  }
+ 
 }

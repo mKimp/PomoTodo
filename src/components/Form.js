@@ -27,7 +27,7 @@ const Form = ({userInput, setUserInput, toDoList, settoDoList,selectoption, setO
     return (
         <div className="formContainer">
             <form>
-                <input value={userInput} onChange={inputHandler}  placeholder="add your todo here" type="text"></input>                
+                <input value={userInput} onChange={inputHandler}  placeholder="add your todo here" type="text" maxLength="50"></input>                
                 <button onClick={submitHandler} type="submit"><i className="fas fa-plus-square" ></i></button>
                 <select onChange={selectOptionHandler}>
                     <option value="all">All</option>

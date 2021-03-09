@@ -20,16 +20,9 @@ function ToDo({todoItem, settoDoList, toDoList}) {
     }
     return (
         <div className="todo-list">
-            <div>
-            <li className={`todo-item ${todoItem.completed ? "completed" : ""}`}>{todoItem.text}</li>  
-
-            </div>
-            <div className="btnAddRemove">
-            <button onClick={doneHandler}><i class="far fa-check-square"></i></button>
-
-            <button onClick={removeHandler}><i class="fa fa-trash"></i></button>
-            </div>
-
+            <li className={`todo-item ${todoItem.completed ? "completed" : ""}`}>{todoItem.text}</li> 
+            <button onClick={doneHandler}><i class="fas fa-check"></i></button>
+            <button onClick={removeHandler}><i class="far fa-trash-alt"></i></button> 
         </div>
     )
 }
