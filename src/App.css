@@ -1,32 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
 body{
   background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
-}
-.App {
-  margin-top: 30px;
-}
-
-h1{
-  text-align: center;
-}
-
-.todo-list{
-  list-style: none;
 }
 
 .completed{
   text-decoration: line-through; 
 }
 
-.formContainer{
-  margin-top: 30px;
+h1, .formContainer{
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
 input, button, select{
   border:none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  padding:10px 14px;
+  padding:8px 12px;
+  font-size: 1.5rem;
 
 }
 
@@ -34,32 +32,32 @@ button{
   color:white;
   background-color: dodgerblue;
   border:none;
+  font-size: 1.5rem;
 }
+
 .todoContainer{
-  margin-top: 35px;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
+
+}
+.todoList{
+  margin-top: 35px;
+  list-style: none;
+
 }
 .todo-list{
-  margin-top:10px;
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 li{
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  padding:10px 14px;
-  background-color: white;
-}
-
-@media only screen and (max-width: 376px)  {
-  .todoContainer{
-    display: block;
-    text-align: center;
-  }
-  .formContainer{
-    display: block;
-    text-align: center;
-
-  }
- 
+  flex:1;
+  margin:10px;
 }
