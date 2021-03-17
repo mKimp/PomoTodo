@@ -18,10 +18,10 @@ function App() {
   const [filterList, setFilterList] = useState([]);
 
   //handle the state change of timer
-  const [timer, setTimer] = useState(25)
+  const [timer, setTimer] = useState("25:00")
 
   //handle the state change of short break
-  const [filterTimer, setFilterTimer] = useState(0)
+  const [filterTimer, setFilterTimer] = useState("")
 
   //handle the state change of long break
 
@@ -33,21 +33,20 @@ function App() {
 
   useEffect(() => {
     filterListHandler();
+    filterTimerHandler();
     saveToLocal();
-  }, [toDoList, selectoption])
+  }, [toDoList, selectoption, filterTimer, timer])
 
 
   const filterTimerHandler = () => {
-    switch (timer) {
-      case 5:
-        setFilterTimer(5)
+    switch (filterTimer) {
+      case "05:00":
+        setFilterTimer("05:00")
         break;
-      case 15:
-        setFilterTimer(15)
+      case "15:00":
+        setFilterTimer("15:00")
         break;
       default:
-        console.log("timer");
-
         setFilterTimer(timer)
         break;
     }
