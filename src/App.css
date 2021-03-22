@@ -6,9 +6,7 @@
     'Lucida Sans', Arial, sans-serif;
 }
 body{
-  background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
   min-height: 100vh;
-
 }
 
 .completed{
@@ -65,4 +63,37 @@ li{
   margin:10px;
   word-break: break-all;
 
+}
+
+.PomoTime, .ShortBreak {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding-top: 15px;
+  border:1px solid salmon;
+  padding:20px;
+}
+
+.pomoInput {
+  padding:10px;
+  border:none;
+}
+
+p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:20px;
+  font-size: 20px;
+}
+
+.TimeDisplay{
+  font-size: 45px;
+}
+
+.pomoDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
 }
