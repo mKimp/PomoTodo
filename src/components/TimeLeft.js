@@ -4,13 +4,39 @@ import momentDurationFormatSetup from 'moment-duration-format'
 
 momentDurationFormatSetup(moment);
 
-function TimeLeft ({pomoTime, shortB}) {
+function TimeLeft ({pomoTime, setTimer, shortB, longB}) {
     const [timeleft, setTimeLeft] = useState(pomoTime);
     const [intervalID, setIntervalID] = useState(null);
-    
+    const[count, setCount] = useState(0);
+    const[seasson, setSeasson] = useState("Pomo")
+
     useEffect(() => {
         setTimeLeft(pomoTime);
     }, [pomoTime])
+
+    useEffect(() =>{
+        if(timeleft === 0){
+            if(seasson === "Pomo"){
+                setTimeLeft(shortB);
+                setSeasson("Short");
+            }
+            else if (seasson === "Short"){
+                if (count <= 3){
+                    setCount(pre => pre + 1)
+                    setTimeLeft(pomoTime);
+                    setSeasson("Pomo");
+                }
+                else {
+                    setTimeLeft(longB);
+                    setSeasson("Long");
+                }
+            }
+            else if (seasson === "Long"){
+                clearInterval(intervalID);
+                setIntervalID(null);
+            }
+        }
+    },[timeleft, shortB, seasson, count, longB])
 
     const checkStatus = intervalID === null ? true : false;
 
@@ -21,17 +47,8 @@ function TimeLeft ({pomoTime, shortB}) {
         }
         else{
             const interval = setInterval(() => {
-                setTimeLeft(preTime => {
-                    if(preTime > 0){
-                        preTime = preTime - 1;
-                        return preTime;
-                    }
-                    else{
-                        console.log(shortB);
-                        setTimeLeft(shortB);
-                    }
-                })
-            }, 100);
+                setTimeLeft(preTime => preTime - 1)
+            },150);
             setIntervalID(interval);
         }
 
@@ -42,6 +59,7 @@ function TimeLeft ({pomoTime, shortB}) {
         <div>
             <p className="TimeDisplay">{formatedTime}</p>
             <button onClick={StartHandler}>{intervalID === null? 'Start' : 'Stop'}</button>
+            <p>{count}</p>
         </div>
     )
 }

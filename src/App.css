@@ -65,7 +65,7 @@ li{
 
 }
 
-.PomoTime, .ShortBreak {
+.PomoTime, .ShortBreak, .LongBreak {
   display: flex;
   justify-content: center;
   align-items: center;  

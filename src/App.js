@@ -5,6 +5,7 @@ import TodoList from './components/TodoList'
 import Timer from './components/Timer'
 import TimeLeft from './components/TimeLeft'
 import ShortBreak from './components/ShortBreak'
+import LongBreak from './components/LongBreak'
 
 function App() {
   //handle form state
@@ -47,6 +48,20 @@ function App() {
     setshortB(shortB + 60);
   }
 
+  //LongBreak = 900 * 60 = 15 mins
+
+  const [longB, setlongB] = useState(900); 
+
+  const DecrementHandlerLong = () => {
+      if (longB <= 0)
+          return longB;
+      else
+        setlongB(longB - 60);
+  }
+
+  const IncrementHandlerLong = () => {
+    setlongB(longB + 60);
+  }
 
   //use one time only to retrieve the saved data form local storage;
   useEffect(() =>{
@@ -94,9 +109,10 @@ function App() {
           <div className="pomoDiv">
             <Timer pomoTime={pomoTime} DecrementHandler={DecrementHandler} IncrementHandler={IncrementHandler} />
             <ShortBreak shortB={shortB} DecrementHandlerShort={DecrementHandlerShort} IncrementHandlerShort={IncrementHandlerShort} />
+            <LongBreak longB={longB} DecrementHandlerLong={DecrementHandlerLong} IncrementHandlerLong={IncrementHandlerLong}  />
           </div>
 
-          <TimeLeft pomoTime={pomoTime}  shortB={shortB} />
+          <TimeLeft pomoTime={pomoTime}  shortB={shortB} longB={longB} setTimer={setTimer}/>
           <TodoList toDoList={filterList} settoDoList={settoDoList}/>
     </div>
   );
