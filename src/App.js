@@ -112,7 +112,7 @@ function App() {
             <LongBreak longB={longB} DecrementHandlerLong={DecrementHandlerLong} IncrementHandlerLong={IncrementHandlerLong}  />
           </div>
 
-          <TimeLeft pomoTime={pomoTime}  shortB={shortB} longB={longB} setTimer={setTimer}/>
+          <TimeLeft pomoTime={pomoTime}  shortB={shortB} longB={longB} setTimer={setTimer} setshortB={setshortB} setlongB={setlongB}/>
           <TodoList toDoList={filterList} settoDoList={settoDoList}/>
     </div>
   );
