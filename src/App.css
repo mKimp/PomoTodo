@@ -18,24 +18,22 @@ body {
 
 nav{
   display:flex;
-  border: 1px solid red;
-  justify-content: space-between;
+  background-color:rgba(0, 0, 255, 0.4);
   align-items: center;
   padding: 30px 0 30px 0;
-}
-
-.links{
-  display: inline-block;
+  justify-content: space-evenly;
 }
 
 a {
   text-decoration: none;
-  align-self: flex-end;
-  margin:5px;
   font-size: 20px;
-
+  padding:5px;
+  color:black;
 }
 
+a:hover{
+  text-decoration: underline;
+}
 .formContainer {
   display: flex;
   justify-content: center;

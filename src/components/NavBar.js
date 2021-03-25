@@ -1,13 +1,15 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 function NavBar() {
   return (
     <nav>
-      <h1>Todo List with Pomo Technique</h1>
+      <div className="titlediv">
+        <h1>PomoTodo</h1>
+      </div>
       <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About</NavLink>
       </div>
     </nav>
   );
