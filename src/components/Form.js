@@ -1,5 +1,4 @@
 import React from 'react'
-import TodoList from './TodoList';
 
 const Form = ({userInput, setUserInput, toDoList, settoDoList,selectoption, setOption}) => {
     const inputHandler = (e) =>{

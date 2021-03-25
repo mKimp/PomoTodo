@@ -1,17 +1,20 @@
-import React, {useState} from 'react'
-import moment from 'moment'
+import React from "react";
+import moment from "moment";
 
-function Timer({pomoTime, setTimer, DecrementHandler, IncrementHandler}) {
-
-    const formattedTime = moment.duration(pomoTime, 's').minutes();
-    return (
-        <div className="PomoTime">
-            <h5>Pomo Time</h5>
-            <button onClick={DecrementHandler}><i className="fas fa-minus-square" ></i></button>
-            <h4 className="pomoInput">{formattedTime}</h4> 
-            <button onClick={IncrementHandler}><i className="fas fa-plus-square" ></i></button>
-        </div>
-    )
+function Timer({ pomoTime, DecrementHandler, IncrementHandler }) {
+  const formattedTime = moment.duration(pomoTime, "s").minutes();
+  return (
+    <div className="PomoTime">
+      <h5>Pomo Time</h5>
+      <button onClick={DecrementHandler}>
+        <i className="fas fa-minus-square"></i>
+      </button>
+      <h4 className="pomoInput">{formattedTime}</h4>
+      <button onClick={IncrementHandler}>
+        <i className="fas fa-plus-square"></i>
+      </button>
+    </div>
+  );
 }
 
-export default Timer
+export default Timer;

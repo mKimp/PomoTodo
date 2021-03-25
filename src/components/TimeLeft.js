@@ -17,29 +17,32 @@ function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB}) {
         setTimeLeft(pomoTime);
     }, [pomoTime])
 
-    useEffect(() =>{
-        if(timeleft === 0){
-            if(seasson === "Pomo"){
-                countRef.current = countRef.current + 1;
-                if(countRef.current < 4){
-                    setTimeLeft(shortB);
-                    setSeasson("Short");
-                    audioSRef.current.play();
-                }else{
-                    setTimeLeft(longB);
-                    setSeasson("Long");
-                    audioLRef.current.play()
+    useEffect(() => {
+        const switchTimeLeft = () => {
+            if(timeleft === 0){
+                if(seasson === "Pomo"){
+                    countRef.current = countRef.current + 1;
+                    if(countRef.current < 4){
+                        setTimeLeft(shortB);
+                        setSeasson("Short");
+                        audioSRef.current.play();
+                    }else{
+                        setTimeLeft(longB);
+                        setSeasson("Long");
+                        audioLRef.current.play()
+                    }
+                }
+                else if (seasson === "Short"){
+                    setTimeLeft(pomoTime);
+                    setSeasson("Pomo");
+                }
+                else if (seasson === "Long"){
+                    clearInterval(intervalID);
+                    setIntervalID(null);
                 }
             }
-            else if (seasson === "Short"){
-                setTimeLeft(pomoTime);
-                setSeasson("Pomo");
-            }
-            else if (seasson === "Long"){
-                clearInterval(intervalID);
-                setIntervalID(null);
-            }
         }
+        switchTimeLeft();
     },[timeleft, shortB, seasson, longB])
 
     const checkStatus = intervalID === null ? true : false;
@@ -52,7 +55,7 @@ function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB}) {
         else{
             const interval = setInterval(() => {
                 setTimeLeft(preTime => preTime - 1)
-            },150);
+            },1000);
             setIntervalID(interval);
         }
 
