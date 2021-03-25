@@ -6,10 +6,10 @@ function Timer({pomoTime, setTimer, DecrementHandler, IncrementHandler}) {
     const formattedTime = moment.duration(pomoTime, 's').minutes();
     return (
         <div className="PomoTime">
-            <p>Pomo Time</p>
-            <button onClick={DecrementHandler}>-</button>
-            <p className="pomoInput">{formattedTime}</p> 
-            <button onClick={IncrementHandler}>+</button>
+            <h5>Pomo Time</h5>
+            <button onClick={DecrementHandler}><i className="fas fa-minus-square" ></i></button>
+            <h4 className="pomoInput">{formattedTime}</h4> 
+            <button onClick={IncrementHandler}><i className="fas fa-plus-square" ></i></button>
         </div>
     )
 }

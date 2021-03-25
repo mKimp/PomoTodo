@@ -102,17 +102,19 @@ function App() {
   }
   return (
     <div className="App">
-          <h1>Today's todo list</h1>
-          <Form userInput={userInput} setUserInput={setUserInput} 
-              toDoList={toDoList} settoDoList={settoDoList} 
-              selectoption={selectoption} setOption={setOption}/>
+      <div className="TitleDiv">
+          <h1>Todo List</h1>
+          <h3>with Pomo Technique</h3>
+      </div>
           <div className="pomoDiv">
             <Timer pomoTime={pomoTime} DecrementHandler={DecrementHandler} IncrementHandler={IncrementHandler} />
             <ShortBreak shortB={shortB} DecrementHandlerShort={DecrementHandlerShort} IncrementHandlerShort={IncrementHandlerShort} />
             <LongBreak longB={longB} DecrementHandlerLong={DecrementHandlerLong} IncrementHandlerLong={IncrementHandlerLong}  />
           </div>
-
           <TimeLeft pomoTime={pomoTime}  shortB={shortB} longB={longB} setTimer={setTimer} setshortB={setshortB} setlongB={setlongB}/>
+          <Form userInput={userInput} setUserInput={setUserInput} 
+              toDoList={toDoList} settoDoList={settoDoList} 
+              selectoption={selectoption} setOption={setOption}/>
           <TodoList toDoList={filterList} settoDoList={settoDoList}/>
     </div>
   );

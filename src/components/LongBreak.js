@@ -6,10 +6,10 @@ function LongBreak({longB, DecrementHandlerLong, IncrementHandlerLong}) {
     const formattedTime = moment.duration(longB, "s").minutes();
     return (
         <div className="LongBreak">
-            <p>LongBreak</p>
-            <button onClick={DecrementHandlerLong}>-</button>
-            <p className="pomoInput">{formattedTime}</p> 
-            <button onClick={IncrementHandlerLong}>+</button>
+            <h5>Long Break</h5>
+            <button onClick={DecrementHandlerLong}><i className="fas fa-minus-square" ></i></button>
+            <h4 className="pomoInput">{formattedTime}</h4> 
+            <button onClick={IncrementHandlerLong}><i className="fas fa-plus-square" ></i></button>
         </div>
     )
 }

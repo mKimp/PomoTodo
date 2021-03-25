@@ -71,18 +71,17 @@ function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB}) {
         audioSRef.current.load();
         audioLRef.current.load();
 
-
     }
 
     const formatedTime = moment.duration(timeleft, 's').format('mm:ss', {trim:false}); //take the secondary object
-    console.log(countRef.current);
     return (
-        <div>
+        <div className="TimeLeftDiv">
             <p className="TimeDisplay">{formatedTime}</p>
-            <button onClick={StartHandler}>{intervalID === null? 'Start' : 'Stop'}</button>
-            <button onClick={ResetHandler}>Reset</button>
+            <div>
+                <button className="btnTimeLeftDiv" onClick={StartHandler}>{intervalID === null? 'Start' : 'Stop'}</button>
+                <button className="btnTimeLeftDiv" onClick={ResetHandler}>Reset</button>
+            </div>
 
-            <p>{countRef.current  + ' ' +seasson}</p>
             <audio src="http://codeskulptor-demos.commondatastorage.googleapis.com/pang/arrow.mp3" type="audio/mpeg" ref={audioSRef}></audio>
             <audio src="http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/explosion_02.wav"  type="audio/mpeg" ref={audioLRef}></audio>
         </div>

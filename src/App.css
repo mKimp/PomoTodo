@@ -1,31 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
 }
 body{
   min-height: 100vh;
+  background-color: rgba(0, 0, 255, 0.22);
+  font-family: 'Della Respira', serif;
 }
 
 .completed{
   text-decoration: line-through; 
 }
+.TitleDiv{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+  
+}
 
-h1, .formContainer{
+.formContainer{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 input, button, select{
   border:none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  padding:8px 12px;
   font-size: 1.5rem;
+  padding:8px 12px;
 
 }
 
@@ -34,17 +45,25 @@ button{
   background-color: dodgerblue;
   border:none;
   font-size: 1.5rem;
+  padding:8px 12px;
+
 }
 
 .todoContainer{
   display: flex;
   justify-content: center;
   align-items: center;
-
+  flex-direction: column;
+  flex-basis: content;
 }
 .todoList{
-  margin-top: 35px;
+  margin-top: 30px;
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding:20px;
+  flex-direction: column;
 
 }
 .todo-list{
@@ -60,8 +79,10 @@ button{
 
 li{
   flex:1;
-  margin:10px;
   word-break: break-all;
+  border:none;
+  background-color: white;
+  padding:7px;
 
 }
 
@@ -69,14 +90,19 @@ li{
   display: flex;
   justify-content: center;
   align-items: center;  
-  padding-top: 15px;
-  border:1px solid salmon;
   padding:20px;
+  border: 1px dashed salmon;
 }
 
+h5{
+  padding:8px;
+}
 .pomoInput {
   padding:10px;
   border:none;
+  font-size: 20px;
+  font-weight: bold;
+  color:salmon;
 }
 
 p{
@@ -85,10 +111,30 @@ p{
   align-items: center;
   padding:20px;
   font-size: 20px;
+  font-weight: bold;
+  color:white;
+  background-color: salmon;
+  
+}
+.TimeLeftDiv{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
 }
 
 .TimeDisplay{
   font-size: 45px;
+  border-radius: 100%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  width:200px;
+  height:200px;
+  margin-top: 20px;
+}
+
+.btnTimeLeftDiv{
+  background-color: salmon;
 }
 
 .pomoDiv{
@@ -96,4 +142,5 @@ p{
   justify-content: center;
   align-items: center;
   margin-top: 25px;
+  flex-wrap: wrap;
 }

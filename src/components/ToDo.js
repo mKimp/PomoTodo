@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import TodoList from './TodoList'
 
 function ToDo({todoItem, settoDoList, toDoList}) {
+    const liRef = useRef(null);
     ///remove handler
     const removeHandler = () => {
         let removeList = toDoList.filter(itemRemoved => todoItem.id !== itemRemoved.id);
@@ -18,9 +19,13 @@ function ToDo({todoItem, settoDoList, toDoList}) {
         })
         settoDoList(newDoneList)
     }
+    
+    // Focus Handler
+    const FocusHandler = () => {
+    }
     return (
         <div className="todo-list">
-            <li className={`todo-item ${todoItem.completed ? "completed" : ""}`}>{todoItem.text}</li> 
+            <li tabIndex="0" className={`todo-item ${todoItem.completed ? "completed" : ""}`} ref={liRef} onClick={FocusHandler} placeholder="your pomo here"> {todoItem.text} </li> 
             <button onClick={doneHandler}><i className="fas fa-check"></i></button>
             <button onClick={removeHandler}><i className="far fa-trash-alt"></i></button> 
         </div>
