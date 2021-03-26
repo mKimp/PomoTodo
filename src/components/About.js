@@ -49,7 +49,7 @@ function About() {
                     </ol>
                     <p style={pStyle}>For the purposes of the technique, a pomodoro is the interval of time spent working.</p>
                     <p style={pStyle}>Regular breaks are taken, aiding assimilation. A short (3–5 minutes) rest separates consecutive pomodoros. Four pomodoros form a set. A longer (15–30 minute) rest is taken between sets.</p>
-                    <p style={pStyle}>A goal of the technique is to reduce the impact of internal and external interruptions on focus and flow. A pomodoro is indivisible; when interrupted during a pomodoro, either the other activity must be recorded and postponed (using the inform – negotiate – schedule – call back strategy[7]) or the pomodoro must be abandoned.</p>      
+                    <p style={pStyle}>A goal of the technique is to reduce the impact of internal and external interruptions on focus and flow. A pomodoro is indivisible; when interrupted during a pomodoro, either the other activity must be recorded and postponed (using the inform – negotiate – schedule – call back strategy) or the pomodoro must be abandoned.</p>      
                     <p>After task completion in a pomodoro, any time remaining could be devoted to activities such as</p>
                     <ol>
                         <li>Review and edit the work just completed.</li>
