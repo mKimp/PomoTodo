@@ -85,10 +85,11 @@ button {
 
 li {
   flex: 1;
-  word-break: break-all;
   border: none;
   background-color: white;
   padding: 7px;
+  width:350px;
+  border: 1px dashed salmon;
 }
 
 .PomoTime,

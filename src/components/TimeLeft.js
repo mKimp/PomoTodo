@@ -2,21 +2,26 @@ import React, {useState, useEffect, useRef} from 'react'
 import moment from 'moment'
 import momentDurationFormatSetup from 'moment-duration-format' 
 
-momentDurationFormatSetup(moment);
+// in order to use the library momentDuractionFormatSetup
+momentDurationFormatSetup(moment); 
 
 function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB}) {
+    //set state
     const [timeleft, setTimeLeft] = useState(pomoTime);
     const [intervalID, setIntervalID] = useState(null);
+    const[seasson, setSeasson] = useState("Pomo")
+
+    //set ref
     const countRef = useRef(0);
     const audioSRef = useRef(null);
     const audioLRef = useRef(null);
 
-    const[seasson, setSeasson] = useState("Pomo")
-
+    // this is a handler the value changed for the starting value for the time left which is used to count down.
     useEffect(() => {
         setTimeLeft(pomoTime);
     }, [pomoTime])
 
+    // this is fired up when the time left is count to 0. We have to switch seassion and count the number of task done. If the number is 4, we completed a set.
     useEffect(() => {
         const switchTimeLeft = () => {
             if(timeleft === 0){

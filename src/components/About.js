@@ -1,5 +1,6 @@
 import React from 'react'
 
+//about page
 function About() {
     const pStyle = {
         backgroundColor: "white",
@@ -9,7 +10,7 @@ function About() {
         fontSize:"16px",
         fontWeight: "normal",
         padding:"10px",
-        paddingLeft:"25px",
+        padding: "0",
     };
 
     const hStyle = {
@@ -23,9 +24,10 @@ function About() {
     const uStyle = {
         display:"flex",
         flexDirection: "column",
-        alignItems: "flex-start",
+        alignItems: "center",
         paddingLeft:"35px",
-        backgroundColor:"white"
+        backgroundColor:"white",
+        border:"none"
     }
 
     return (
@@ -51,7 +53,7 @@ function About() {
                     <p style={pStyle}>Regular breaks are taken, aiding assimilation. A short (3–5 minutes) rest separates consecutive pomodoros. Four pomodoros form a set. A longer (15–30 minute) rest is taken between sets.</p>
                     <p style={pStyle}>A goal of the technique is to reduce the impact of internal and external interruptions on focus and flow. A pomodoro is indivisible; when interrupted during a pomodoro, either the other activity must be recorded and postponed (using the inform – negotiate – schedule – call back strategy) or the pomodoro must be abandoned.</p>      
                     <p>After task completion in a pomodoro, any time remaining could be devoted to activities such as</p>
-                    <ol>
+                    <ol style={uStyle}>
                         <li>Review and edit the work just completed.</li>
                         <li>Review the activities from a learning point of view: What did I learn? What could I do better or differently?</li>
                         <li>Review the list of upcoming tasks for the next planned Pomodoro time blocks, and start reflecting on or updating those tasks.</li>

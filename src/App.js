@@ -11,18 +11,6 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import About from "./components/About";
 
 function App() {
-  //handle form state
-  const [userInput, setUserInput] = useState("");
-
-  //handle to do list state
-  const [toDoList, settoDoList] = useState([]);
-
-  //handle select option
-  const [selectoption, setOption] = useState("all");
-
-  //filter to do list
-  const [filterList, setFilterList] = useState([]);
-
   //Pomo Time
   const [pomoTime, setTimer] = useState(1500); // 25 minute * 60 = 1500 seconds;
 
@@ -48,7 +36,6 @@ function App() {
   };
 
   //LongBreak = 900 * 60 = 15 mins
-
   const [longB, setlongB] = useState(900);
 
   const DecrementHandlerLong = () => {
@@ -59,6 +46,18 @@ function App() {
   const IncrementHandlerLong = () => {
     setlongB(longB + 60);
   };
+
+  //handle form state
+  const [userInput, setUserInput] = useState("");
+
+  //handle to do list state
+  const [toDoList, settoDoList] = useState([]);
+  
+  //handle select option
+  const [selectoption, setOption] = useState("all");
+  
+  //filter to do list
+  const [filterList, setFilterList] = useState([]);
 
   //use one time only to retrieve the saved data form local storage;
   useEffect(() => {
@@ -87,8 +86,8 @@ function App() {
       }
     };
     filterListHandler();
+    
     // save to the local storage
-
     const saveToLocal = () => {
       localStorage.setItem("toDoList", JSON.stringify(toDoList));
     };
