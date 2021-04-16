@@ -9,7 +9,6 @@ function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB, seass
     //set state
     const [timeleft, setTimeLeft] = useState(pomoTime);
     const [intervalID, setIntervalID] = useState(null);
-    //const[seasson, setSeasson] = useState("Pomo")
 
     //set ref
     const countRef = useRef(0);
@@ -60,7 +59,7 @@ function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB, seass
         else{
             const interval = setInterval(() => {
                 setTimeLeft(preTime => preTime - 1)
-            },100);
+            },1000);
             setIntervalID(interval);
         }
 
