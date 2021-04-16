@@ -20,7 +20,7 @@ nav{
   background-color:lightgray;
   align-items: center;
   padding: 30px 0 30px 0;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 a {
@@ -88,8 +88,10 @@ li {
   border: none;
   background-color: white;
   padding: 7px;
-  width:350px;
+  width:150px;
   border: 1px dashed #FF8000;
+  overflow-y: auto;
+  overflow-wrap: break-word;
 }
 
 .PomoTime,
@@ -102,6 +104,10 @@ li {
   border: 1px dashed #FF8000;
 }
 .highlight, .highlightLong, .highlightShort{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   background-color: darkgray;
 }
 
@@ -137,8 +143,8 @@ p {
   border-radius: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin-top: 70px;
 }
 

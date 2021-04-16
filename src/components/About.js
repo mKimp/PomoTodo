@@ -11,8 +11,6 @@ function About() {
         fontWeight: "normal",
         padding:"10px",
         padding: "0",
-        marginLeft:"30px",
-        paddingTop:"25px",
     };
 
     const hStyle = {
