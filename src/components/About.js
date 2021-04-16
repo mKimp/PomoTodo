@@ -9,13 +9,12 @@ function About() {
         justifyContent: "flex-start",
         fontSize:"16px",
         fontWeight: "normal",
-        padding:"10px",
-        padding: "0",
+        paddingTop:"25px",
+        marginLeft:"20px"
     };
 
     const hStyle = {
         display:"flex",
-        marginLeft:"8px",
         paddingTop:"25px",
         fontWeight: "bold",
         justifyContent:"center",
@@ -25,11 +24,9 @@ function About() {
         display:"flex",
         flexDirection: "column",
         alignItems: "center",
-        paddingLeft:"35px",
+        justifyContent:"center",
         backgroundColor:"white",
-        border:"none"
     }
-
     return (
         <div>
             <main  style={{backgroundColor:"white"}}>
@@ -42,21 +39,21 @@ function About() {
                 <section>
                     <p>There are six steps in the original technique</p>
                     <ol style={uStyle}>
-                        <li>Decide on the task to be done</li>
-                        <li>Set the pomodoro timer (traditionally to 25 minutes)</li>
-                        <li>Work on the task.</li>
-                        <li>End work when the timer rings and put a checkmark on a piece of paper</li>
-                        <li>If you have fewer than four checkmarks, take a short break (3–5 minutes) and then return to step 2; otherwise continue to step 6</li>
-                        <li>After four pomodoros, take a longer break (15–30 minutes), reset your checkmark count to zero, then go to step 1.</li>
+                        <li style={{width:"250px"}}>Decide on the task to be done</li>
+                        <li style={{width:"250px"}}>Set the pomodoro timer (traditionally to 25 minutes)</li>
+                        <li style={{width:"250px"}}>Work on the task.</li>
+                        <li style={{width:"250px"}}>End work when the timer rings and put a checkmark on a piece of paper</li>
+                        <li style={{width:"250px"}}>If you have fewer than four checkmarks, take a short break (3–5 minutes) and then return to step 2; otherwise continue to step 6</li>
+                        <li style={{width:"250px"}}>After four pomodoros, take a longer break (15–30 minutes), reset your checkmark count to zero, then go to step 1.</li>
                     </ol>
                     <p style={pStyle}>For the purposes of the technique, a pomodoro is the interval of time spent working.</p>
                     <p style={pStyle}>Regular breaks are taken, aiding assimilation. A short (3–5 minutes) rest separates consecutive pomodoros. Four pomodoros form a set. A longer (15–30 minute) rest is taken between sets.</p>
                     <p style={pStyle}>A goal of the technique is to reduce the impact of internal and external interruptions on focus and flow. A pomodoro is indivisible; when interrupted during a pomodoro, either the other activity must be recorded and postponed (using the inform – negotiate – schedule – call back strategy) or the pomodoro must be abandoned.</p>      
                     <p>After task completion in a pomodoro, any time remaining could be devoted to activities such as</p>
                     <ol style={uStyle}>
-                        <li>Review and edit the work just completed.</li>
-                        <li>Review the activities from a learning point of view: What did I learn? What could I do better or differently?</li>
-                        <li>Review the list of upcoming tasks for the next planned Pomodoro time blocks, and start reflecting on or updating those tasks.</li>
+                        <li style={{width:"250px"}}>Review and edit the work just completed.</li>
+                        <li style={{width:"250px"}}>Review the activities from a learning point of view: What did I learn? What could I do better or differently?</li>
+                        <li style={{width:"250px"}}>Review the list of upcoming tasks for the next planned Pomodoro time blocks, and start reflecting on or updating those tasks.</li>
                     </ol>
                  </section>
             </main>
