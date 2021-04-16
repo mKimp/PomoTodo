@@ -13,10 +13,13 @@ import About from "./components/About";
 function App() {
   //Pomo Time
   const [pomoTime, setTimer] = useState(1500); // 25 minute * 60 = 1500 seconds;
-
   const DecrementHandler = () => {
-    if (pomoTime <= 0) return pomoTime;
-    else setTimer(pomoTime - 60);
+    if (pomoTime <= 0) {
+      return pomoTime;
+    }
+    else {
+      setTimer(pomoTime - 60);
+    }
   };
 
   const IncrementHandler = () => {
@@ -46,6 +49,10 @@ function App() {
   const IncrementHandlerLong = () => {
     setlongB(longB + 60);
   };
+
+  //keep track with seassion, pomo time, short break or long break
+  const[seasson, setSeasson] = useState("Pomo")
+
 
   //handle form state
   const [userInput, setUserInput] = useState("");
@@ -94,6 +101,8 @@ function App() {
     saveToLocal();
   }, [toDoList, selectoption]);
 
+  console.log(seasson)
+
   return (
     <Router>
  <div className="App">
@@ -105,16 +114,19 @@ function App() {
               pomoTime={pomoTime}
               DecrementHandler={DecrementHandler}
               IncrementHandler={IncrementHandler}
+              seasson={seasson}
             />
             <ShortBreak
               shortB={shortB}
               DecrementHandlerShort={DecrementHandlerShort}
               IncrementHandlerShort={IncrementHandlerShort}
+              seasson={seasson}
             />
             <LongBreak
               longB={longB}
               DecrementHandlerLong={DecrementHandlerLong}
               IncrementHandlerLong={IncrementHandlerLong}
+              seasson={seasson}
             />
           </div>
           <TimeLeft
@@ -124,6 +136,8 @@ function App() {
             setTimer={setTimer}
             setshortB={setshortB}
             setlongB={setlongB}
+            seasson={seasson} 
+            setSeasson={setSeasson}
           />
           <Form
             userInput={userInput}

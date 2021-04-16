@@ -5,11 +5,11 @@ import momentDurationFormatSetup from 'moment-duration-format'
 // in order to use the library momentDuractionFormatSetup
 momentDurationFormatSetup(moment); 
 
-function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB}) {
+function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB, seasson, setSeasson}) {
     //set state
     const [timeleft, setTimeLeft] = useState(pomoTime);
     const [intervalID, setIntervalID] = useState(null);
-    const[seasson, setSeasson] = useState("Pomo")
+    //const[seasson, setSeasson] = useState("Pomo")
 
     //set ref
     const countRef = useRef(0);
@@ -60,7 +60,7 @@ function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB}) {
         else{
             const interval = setInterval(() => {
                 setTimeLeft(preTime => preTime - 1)
-            },1000);
+            },100);
             setIntervalID(interval);
         }
 
@@ -85,6 +85,7 @@ function TimeLeft ({pomoTime, setTimer, shortB, longB,setshortB, setlongB}) {
     return (
         <div className="TimeLeftDiv">
             <p className="TimeDisplay">{formatedTime}</p>
+            <p>Pomo Completed: {countRef.current}</p>
             <div>
                 <button className="btnTimeLeftDiv" onClick={StartHandler}>{intervalID === null? 'Start' : 'Stop'}</button>
                 <button className="btnTimeLeftDiv" onClick={ResetHandler}>Reset</button>

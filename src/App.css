@@ -17,7 +17,7 @@ body {
 
 nav{
   display:flex;
-  background-color:rgba(0, 0, 255, 0.4);
+  background-color:lightgray;
   align-items: center;
   padding: 30px 0 30px 0;
   justify-content: space-evenly;
@@ -89,7 +89,7 @@ li {
   background-color: white;
   padding: 7px;
   width:350px;
-  border: 1px dashed salmon;
+  border: 1px dashed #FF8000;
 }
 
 .PomoTime,
@@ -99,8 +99,12 @@ li {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  border: 1px dashed salmon;
+  border: 1px dashed #FF8000;
 }
+.highlight, .highlightLong, .highlightShort{
+  background-color: darkgray;
+}
+
 
 h5 {
   padding: 8px;
@@ -110,7 +114,6 @@ h5 {
   border: none;
   font-size: 20px;
   font-weight: bold;
-  color: salmon;
 }
 
 p {
@@ -120,8 +123,7 @@ p {
   padding: 20px;
   font-size: 20px;
   font-weight: bold;
-  color: white;
-  background-color: salmon;
+  color: black;
 }
 .TimeLeftDiv {
   display: flex;
@@ -135,13 +137,13 @@ p {
   border-radius: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
-  width: 200px;
-  height: 200px;
-  margin-top: 20px;
+  width: 250px;
+  height: 250px;
+  margin-top: 70px;
 }
 
 .btnTimeLeftDiv {
-  background-color: salmon;
+  background-color: #FF8000;
 }
 
 .pomoDiv {
