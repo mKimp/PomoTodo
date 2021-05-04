@@ -101,8 +101,6 @@ function App() {
     saveToLocal();
   }, [toDoList, selectoption]);
 
-  console.log(seasson)
-
   return (
     <Router>
  <div className="App">
